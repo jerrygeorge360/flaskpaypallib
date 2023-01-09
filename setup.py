@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 setup(
     name= 'flask-paypal-sdk',
-    packages=find_packages(include=['flask-paypal-sdk']),
+    packages=find_packages(include=['flask_paypal_sdk']),
     version='0.0.1',
     description='Easy to use library for making your payments',
     long_description='This easy to use library ensures seamless integration of the paypal sdk into the flask framework.(More functionalities coming..)',

@@ -11,7 +11,7 @@ This easy to use library ensures seamless integration of the paypal sdk into the
 ## Quick start
 
     From flask import Flask,render_template
-    from flask-paypal-sdk import Sandbox
+    from flask_paypal_sdk import Sandbox
     app=Flask(__name__)
 
     # The home route that displays the item to be bought.
