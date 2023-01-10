@@ -29,7 +29,7 @@ This easy to use library ensures seamless integration of the paypal sdk into the
 
     ground_nut.init_app(app)
 
-    ground_nut.create_order()
+    ground_nut.generate_access_token(client_id,client_secret_key)
 
     ground_nut.create_route('ground_nut')
 
@@ -43,9 +43,7 @@ This easy to use library ensures seamless integration of the paypal sdk into the
 
     beans.init_app(app)
 
-    beans.create_order()
-
-    beans.create_route('beans')
+    beans.create_order_route('beans')
 
     beans.complete_process()
 
@@ -89,8 +87,7 @@ This is for the the front. As easy as just adding the link.
 2. **Create an instance of the class.**
 3. **Initialize the instance.**
 4. **Call the generate token method**
-4. **Call the create route method**
-5. **Call the create or approve method**
+4. **Call the create order route method**
 6. **Call the complete process method.**
 7. **Hoera!! you are done.**
 ---
@@ -112,24 +109,21 @@ Card authorization is approval from a credit or debit card issuer (usually a ban
 
     Payer.generate_access_token("client_id","client_secret_key")
 
-    Payer.create_order()
-
-    Payer.create_route('stockings')
+    Payer.create_order_route('shirts')
 
     Payer.complete_process()
 
 
 ### To approve a payment.
     
-    Payer = Sandbox('USD',10, 'shirts', 6, 'nice shirt', 10, 20,2, 3, 7,2, 'AUTHORIZE', 'http://localhost:5000', 'http://localhost:5000')
+    Payer = Sandbox('USD',10, 'shirts', 6, 'nice shirts', 10, 20,2, 3, 7,2, 'AUTHORIZE', 'http://localhost:5000/goods','goods', 'http://localhost:5000/cancel')
     
     Payer.init_app(app)
     
     Payer.generate_access_token("client_id","client_secret_key")
     
-    Payer.create_order()
     
-    Payer.create_route('stockings')
+    Payer.create_order_route('shirts')
     
     Payer.complete_process()
 
