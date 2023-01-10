@@ -38,7 +38,7 @@ class TestPayPalSDK(unittest.TestCase):
 
         
 
-    @patch("flask_paypal_sdk.sandbox.requests")
+    @patch("flask_paypal_lib.sandbox.requests")
     def test_generate_access_token(self,mock_requests):
         token=jwt.encode({"some":"payload"}, key="secret_key",algorithm="HS256")
         mock_response=MagicMock()
@@ -47,7 +47,7 @@ class TestPayPalSDK(unittest.TestCase):
         mock_requests.post.return_value=mock_response
         self.assertEqual(self.test_obj.generate_access_token(os.environ.get('client_id'),os.environ.get('client_secret_key')),token)
         
-    @patch("flask_paypal_sdk.sandbox.requests")
+    @patch("flask_paypal_lib.sandbox.requests")
     def test_create_order(self,mock_requests):
         mock_response=MagicMock()
         mock_response.status_code=200
@@ -65,7 +65,7 @@ class TestPayPalSDK(unittest.TestCase):
         self.assertIsNotNone(self.test_obj.get_approval_link())
         self.assertIsInstance(self.test_obj.get_approval_link(), str)
     
-    @patch("flask_paypal_sdk.sandbox.requests")
+    @patch("flask_paypal_lib.sandbox.requests")
     def test_capture(self,mock_requests):
         mock_response=MagicMock()
         mock_response.status_code=200
@@ -74,7 +74,7 @@ class TestPayPalSDK(unittest.TestCase):
         self.assertEqual(self.test_obj._capture(),{'status':'ok'})
         
 
-    @patch("flask_paypal_sdk.sandbox.requests")
+    @patch("flask_paypal_lib.sandbox.requests")
     def test_authorize(self,mock_requests):
         mock_response=MagicMock()
         mock_response.status_code=200
@@ -84,7 +84,7 @@ class TestPayPalSDK(unittest.TestCase):
         
         # self.assertEqual(self.test_obj._authorize(),'ok')
 
-    @patch("flask_paypal_sdk.sandbox.requests")
+    @patch("flask_paypal_lib.sandbox.requests")
     def test_create_order_route(self,mock_requests,name="name_of_route"):
         mock_response=MagicMock()
         mock_response.status_code=200
@@ -96,7 +96,7 @@ class TestPayPalSDK(unittest.TestCase):
         self.assertEqual(result.status_code,302)
 
 
-    @patch("flask_paypal_sdk.sandbox.requests")
+    @patch("flask_paypal_lib.sandbox.requests")
     def test_complete_process(self,mock_requests):
 
         mock_response=MagicMock()

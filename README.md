@@ -1,4 +1,4 @@
-# Flask-Paypal-SDK
+# flaskpaypallib
 
 ## Description
 This easy to use library ensures seamless integration of the paypal sdk into the flask framework.
@@ -6,12 +6,12 @@ This easy to use library ensures seamless integration of the paypal sdk into the
 
 ## Installing the Flask-paypal-sdk.
 
-    pip install flask-paypal-sdk
+    pip install flaskpaypallib
 
 ## Quick start
 
     From flask import Flask,render_template
-    from flask_paypal_sdk import Sandbox
+    from flask_paypal_lib import Sandbox
     app=Flask(__name__)
 
     # The home route that displays the item to be bought.
@@ -104,7 +104,7 @@ Card authorization is approval from a credit or debit card issuer (usually a ban
 
 ### To capture a payment.(sandbox)
     
-    from sandbox import FlaskPaypalSdk
+    from flask_paypal_lib import Sandbox
 
     Payer = Sandbox('USD',10, 'shirts', 6, 'nice shirts', 10, 20,2, 3, 7,2, 'CAPTURE', 'http://localhost:5000/okme','okme', 'http://localhost:5000')
 
