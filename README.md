@@ -4,7 +4,7 @@
 This easy to use library ensures seamless integration of the paypal sdk into the flask framework.
 (Invoices and subscriptions yet to be added.)
 
-## Installing the Flask-paypal-sdk.
+## Installing the flaskpaypallib.
 
     pip install flaskpaypallib
 
