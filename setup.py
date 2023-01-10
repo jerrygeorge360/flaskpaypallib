@@ -9,7 +9,7 @@ setup(
     author='Jerry George(Jbotrex)',
     author_email='jbotrex@gmail.com',
     url='https://github.com/jerrygeorge360/flaskpaypallib',
-    install_requires=['flask','requests','json'],
+    install_requires=['flask','requests'],
     extras_require={
         'tests': tests_require,
     },
