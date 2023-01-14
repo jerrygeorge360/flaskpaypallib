@@ -9,7 +9,7 @@ This easy to use library ensures seamless integration of the paypal sdk into the
     pip install flaskpaypallib
 
 ## Quick start
-
+```python
     From flask import Flask,render_template
     from flask_paypal_lib import Sandbox
     app=Flask(__name__)
@@ -46,16 +46,15 @@ This easy to use library ensures seamless integration of the paypal sdk into the
     beans.create_order_route('beans')
 
     beans.complete_process()
+```
 
 This is for the the front. As easy as just adding the link.
-
-    home_page.html
-
-    
+- home_page.html
+ ```html 
     <a href="https://www.sample.com/groundnut">Buy Now </a>
 
     <a href="https://www.sample.com/beans"> Buy Now</a>
-
+```
 
 ### Prerequisites
 + You should have your client id and client secret key
@@ -100,7 +99,7 @@ Card authorization is approval from a credit or debit card issuer (usually a ban
 
 
 ### To capture a payment.(sandbox)
-    
+```python
     from flask_paypal_lib import Sandbox
 
     Payer = Sandbox('USD',10, 'shirts', 6, 'nice shirts', 10, 20,2, 3, 7,2, 'CAPTURE', 'http://localhost:5000/okme','okme', 'http://localhost:5000')
@@ -113,9 +112,9 @@ Card authorization is approval from a credit or debit card issuer (usually a ban
 
     Payer.complete_process()
 
-
+```
 ### To approve a payment.
-    
+```python
     Payer = Sandbox('USD',10, 'shirts', 6, 'nice shirts', 10, 20,2, 3, 7,2, 'AUTHORIZE', 'http://localhost:5000/goods','goods', 'http://localhost:5000/cancel')
     
     Payer.init_app(app)
@@ -126,7 +125,7 @@ Card authorization is approval from a credit or debit card issuer (usually a ban
     Payer.create_order_route('shirts')
     
     Payer.complete_process()
-
+```
 ---
 
 ## Parameters
